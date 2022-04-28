@@ -51,6 +51,7 @@ runCtfd(){
     echo "ALL DONE"
 }
 
+apk --no-cache add curl git
 apt update
 apt install -y curl git
 yum makecache
