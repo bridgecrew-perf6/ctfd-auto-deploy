@@ -51,11 +51,11 @@ runCtfd(){
     echo "ALL DONE"
 }
 
-apk --no-cache add curl git
+apk --no-cache add git
 apt update
-apt install -y curl git
+apt install -y git
 yum makecache
-yum -y install curl git
+yum -y install git
 docker-compose -f /opt/ctfd/docker-compose.yml down
 rm -rf /opt/ctfd
 mkdir -p /opt/ctfd
