@@ -7,7 +7,7 @@ installDocker(){
     curl -sSL https://get.daocloud.io/docker | sh
     curl -SL https://github.com/docker/compose/releases/download/v2.4.1/docker-compose-linux-x86_64 -o /usr/bin/docker-compose
     chmod +x /usr/bin/docker-compose
-    docker swarm init
+    docker swarm init --advertise-addr 127.0.0.1
     docker node update --label-add='name=linux-1' $(docker node ls -q)
     b=$(date "+%s")
     echo "Docker Install Finish. Time: $(($b-$a))s"
