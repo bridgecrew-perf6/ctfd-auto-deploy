@@ -1,3 +1,3 @@
 ```
-curl -sSL https://raw.githubusercontent.com/pwnthebox/ctfd-auto-deploy/master/install.sh | sh
+sh <(curl -s https://raw.githubusercontent.com/pwnthebox/ctfd-auto-deploy/master/install.sh)
 ```
