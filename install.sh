@@ -57,6 +57,7 @@ apk --no-cache add git
 apt update
 apt install -y git
 yum makecache
+yum -y remove httpd
 yum -y install git
 docker-compose -f /opt/ctfd/docker-compose.yml down
 rm -rf /opt/ctfd
