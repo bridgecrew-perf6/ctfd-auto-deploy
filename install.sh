@@ -17,11 +17,11 @@ installDocker(){
 
 downloadCtfd(){
     echo "Download Ctfd"
-    git clone --depth 1 -b 3.4.3 https://hub.fastgit.org/CTFd/CTFd .
-    git clone --depth 1 https://hub.fastgit.org/frankli0324/ctfd-whale CTFd/plugins/ctfd-whale
-    git clone --depth 1 https://hub.fastgit.org/liuxin2020/ctfd-plugin-multichoice CTFd/plugins/ctfd-plugin-multichoice
+    git clone --depth 1 -b 3.4.3 https://ghproxy.com/https://github.com/CTFd/CTFd .
+    git clone --depth 1 https://ghproxy.com/https://github.com/frankli0324/ctfd-whale CTFd/plugins/ctfd-whale
+    git clone --depth 1 https://ghproxy.com/https://github.com/liuxin2020/ctfd-plugin-multichoice CTFd/plugins/ctfd-plugin-multichoice
     echo "flask_apscheduler" >> requirements.txt
-    curl -fsSL https://cdn.jsdelivr.net/gh/frankli0324/ctfd-whale/docker-compose.example.yml -o docker-compose.yml
+    curl -fsSL https://ghproxy.com/https://raw.githubusercontent.com/frankli0324/ctfd-whale/master/docker-compose.example.yml -o docker-compose.yml
 }
 
 configureCtfd(){
