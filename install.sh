@@ -5,7 +5,7 @@ installDocker(){
     echo "Install Docker"
     a=$(date "+%s")
     curl -sSL https://get.daocloud.io/docker | sh
-    curl -SL https://github.abskoop.workers.dev/https://github.com/docker/compose/releases/download/v2.4.1/docker-compose-linux-x86_64 -o /usr/bin/docker-compose
+    curl -SL https://ghproxy.com/https://github.com/docker/compose/releases/download/v2.4.1/docker-compose-linux-x86_64 -o /usr/bin/docker-compose
     chmod +x /usr/bin/docker-compose
     systemctl enable docker
     systemctl start docker
