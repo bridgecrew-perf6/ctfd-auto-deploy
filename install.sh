@@ -40,7 +40,7 @@ installDocker(){
 
 downloadCtfd(){
     echo "Download Ctfd"
-    git clone --depth 1 -b 3.4.3 https://ghproxy.com/https://github.com/CTFd/CTFd .
+    git clone --depth 1 -b 3.4.3 https://hub.fastgit.xyz/CTFd/CTFd .
     git clone --depth 1 https://hub.fastgit.xyz/frankli0324/ctfd-whale CTFd/plugins/ctfd-whale
     git clone --depth 1 https://hub.fastgit.xyz/liuxin2020/ctfd-plugin-multichoice CTFd/plugins/ctfd-plugin-multichoice
     echo "flask_apscheduler" >> requirements.txt
