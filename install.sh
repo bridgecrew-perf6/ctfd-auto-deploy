@@ -1,6 +1,29 @@
 #!/bin/bash
 [ $(id -u) != "0" ] && { echo "Error: This script must be run as root!"; exit 1; }
 
+Str="abcdefghijklnmopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789"
+pass1=""
+for i in {1..12}
+do
+	num=$[RANDOM%${#Str}]
+	tmp=${Str:num:1}
+	pass1+=$tmp
+done
+pass2=""
+for i in {1..12}
+do
+	num=$[RANDOM%${#Str}]
+	tmp=${Str:num:1}
+	pass2+=$tmp
+done
+pass3=""
+for i in {1..12}
+do
+	num=$[RANDOM%${#Str}]
+	tmp=${Str:num:1}
+	pass3+=$tmp
+done
+
 installDocker(){
     echo "Install Docker"
     a=$(date "+%s")
@@ -26,7 +49,10 @@ downloadCtfd(){
 
 configureCtfd(){
     echo "Configure Ctfd"
-    sed -i 's/http:\/\/frpc:7400/http:\/\/frank:qwer@frpc:7000/g' /opt/ctfd/CTFd/plugins/ctfd-whale/utils/setup.py
+    sed -i "s/http:\/\/frpc:7400/http:\/\/${pass1}:${pass2}@frpc:7000/g" /opt/ctfd/CTFd/plugins/ctfd-whale/utils/setup.py
+    sed -i "s/frank/${pass1}/g" /opt/ctfd/docker-compose.yml
+    sed -i "s/qwer/${pass2}/g" /opt/ctfd/docker-compose.yml
+    sed -i "s/your_token/${pass3}/g" /opt/ctfd/docker-compose.yml
     sed -i 's/ctfd_frp-containers/ctfd_containers/g' /opt/ctfd/CTFd/plugins/ctfd-whale/utils/docker.py
     read -p "Enter node domain [127.0.0.1.nip.io]:" domain
     [ ! -n "${domain}" ] && { domain="127.0.0.1.nip.io"; }
