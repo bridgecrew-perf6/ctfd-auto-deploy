@@ -5,23 +5,23 @@ Str="abcdefghijklnmopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789"
 pass1=""
 for i in {1..12}
 do
-	num=$[RANDOM%${#Str}]
-	tmp=${Str:num:1}
-	pass1+=$tmp
+    num=$[RANDOM%${#Str}]
+    tmp=${Str:num:1}
+    pass1+=$tmp
 done
 pass2=""
 for i in {1..12}
 do
-	num=$[RANDOM%${#Str}]
-	tmp=${Str:num:1}
-	pass2+=$tmp
+    num=$[RANDOM%${#Str}]
+    tmp=${Str:num:1}
+    pass2+=$tmp
 done
 pass3=""
 for i in {1..12}
 do
-	num=$[RANDOM%${#Str}]
-	tmp=${Str:num:1}
-	pass3+=$tmp
+    num=$[RANDOM%${#Str}]
+    tmp=${Str:num:1}
+    pass3+=$tmp
 done
 
 installDocker(){
