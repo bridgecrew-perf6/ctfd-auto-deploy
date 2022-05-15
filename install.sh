@@ -50,9 +50,9 @@ downloadCtfd(){
 configureCtfd(){
     echo "Configure Ctfd"
     sed -i "s/http:\/\/frpc:7400/http:\/\/${pass1}:${pass2}@frpc:7000/g" /opt/ctfd/CTFd/plugins/ctfd-whale/utils/setup.py
-    sed -i "s/frank/${pass1}/g" /opt/ctfd/docker-compose.yml
-    sed -i "s/qwer/${pass2}/g" /opt/ctfd/docker-compose.yml
-    sed -i "s/your_token/${pass3}/g" /opt/ctfd/docker-compose.yml
+    sed -i "s/=frank/=${pass1}/g" /opt/ctfd/docker-compose.yml
+    sed -i "s/=qwer/=${pass2}/g" /opt/ctfd/docker-compose.yml
+    sed -i "s/=your_token/=${pass3}/g" /opt/ctfd/docker-compose.yml
     sed -i 's/ctfd_frp-containers/ctfd_containers/g' /opt/ctfd/CTFd/plugins/ctfd-whale/utils/docker.py
     read -p "Enter node domain [127.0.0.1.nip.io]:" domain
     [ ! -n "${domain}" ] && { domain="127.0.0.1.nip.io"; }
