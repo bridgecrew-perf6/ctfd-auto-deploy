@@ -28,7 +28,7 @@ installDocker(){
     echo "Install Docker"
     a=$(date "+%s")
     curl -sSL https://get.daocloud.io/docker | sh
-    curl -SL https://hub.fastgit.xyz/docker/compose/releases/download/v2.4.1/docker-compose-linux-x86_64 -o /usr/bin/docker-compose
+    curl -SL https://github.com/docker/compose/releases/download/v2.4.1/docker-compose-linux-x86_64 -o /usr/bin/docker-compose
     chmod +x /usr/bin/docker-compose
     systemctl enable docker
     systemctl start docker
@@ -40,11 +40,11 @@ installDocker(){
 
 downloadCtfd(){
     echo "Download Ctfd"
-    git clone --depth 1 -b 3.4.3 https://hub.fastgit.xyz/CTFd/CTFd .
-    git clone --depth 1 https://hub.fastgit.xyz/frankli0324/ctfd-whale CTFd/plugins/ctfd-whale
-    git clone --depth 1 https://hub.fastgit.xyz/liuxin2020/ctfd-plugin-multichoice CTFd/plugins/ctfd-plugin-multichoice
+    git clone --depth 1 -b 3.4.3 https://github.com/CTFd/CTFd .
+    git clone --depth 1 https://github.com/frankli0324/ctfd-whale CTFd/plugins/ctfd-whale
+    git clone --depth 1 https://github.com/liuxin2020/ctfd-plugin-multichoice CTFd/plugins/ctfd-plugin-multichoice
     echo "flask_apscheduler" >> requirements.txt
-    curl -fsSL https://raw.fastgit.org/frankli0324/ctfd-whale/master/docker-compose.example.yml -o docker-compose.yml
+    curl -fsSL https://raw.githubusercontent.com/frankli0324/ctfd-whale/master/docker-compose.example.yml -o docker-compose.yml
 }
 
 configureCtfd(){
