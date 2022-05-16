@@ -11,7 +11,10 @@ bash <(curl -s https://raw.githubusercontent.com/pwnthebox/ctfd-auto-deploy/mast
 
 ## Parameter description
 ```
-  Enter node domain [127.0.0.1.nip.io]: example.com    # whale http mode domain, set *.example.com resolution in dns server
-  Enter node http mode port [8080]:                    # whale http mode port （do not use 80)
-  Enter node direct mode port range [10000-10100]:     # whale direct mode port
+Enter node domain [127.0.0.1.nip.io]: example.com    # whale http mode domain, set *.example.com resolution in dns server
+Enter node http mode port [8080]:                    # whale http mode port （do not use 80)
+Enter node direct mode port range [10000-10100]:     # whale direct mode port
 ```
+
+## No domain deploy
+- If you don't have a domain, you can use nip.io. (e.g. 1.1.1.1.nip.io)
