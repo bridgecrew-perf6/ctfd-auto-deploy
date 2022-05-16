@@ -9,6 +9,10 @@
 bash <(curl -s https://raw.githubusercontent.com/pwnthebox/ctfd-auto-deploy/master/install.sh)
 ```
 
+## Environment
+- Ubuntu 18.04 later
+- CentOS 7
+
 ## Parameter description
 ```
 Enter node domain [127.0.0.1.nip.io]: example.com    # whale http mode domain, set *.example.com resolution in dns server
